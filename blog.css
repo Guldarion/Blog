@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #1c2526; /* Тёмный фон с серым оттенком */
+    background-color: #2a3d3e; /* Тёмный фон из заголовка */
     color: #e0e0e0;
     max-width: 1000px;
     margin: 0 auto;
@@ -12,7 +12,7 @@ body {
 
 header {
     text-align: center;
-    background: #2a3d3e; /* Глубокий тёмно-зелёный заголовок */
+    background: #2a3d3e;
     padding: 50px 20px;
     border-radius: 8px;
     margin-bottom: 40px;
@@ -22,7 +22,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.8em;
-    color: #f4a261; /* Тёплый оранжевый акцент */
+    color: #f4a261;
 }
 
 header p {
@@ -39,7 +39,7 @@ header p {
 }
 
 .post-preview {
-    background: #2e3f41; /* Тёмный блок для постов */
+    background: #2e3f41;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -63,52 +63,76 @@ header p {
     margin-bottom: 10px;
 }
 
-.read-more {
-    color: #e76f51; /* Яркий коралловый для ссылок */
-    text-decoration: none;
-    font-weight: bold;
+.open-modal {
+    background: #e76f51;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.read-more:hover {
-    text-decoration: underline;
+.open-modal:hover {
+    background: #f4a261;
 }
 
-footer {
-    text-align: center;
+/* Всплывающее окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2e3f41;
     padding: 20px;
-    color: #a3bffa;
-    background: #2a3d3e;
     border-radius: 8px;
-    margin-top: 40px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #a3bffa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f4a261;
+}
+
+.modal-content h3 {
+    color: #f4a261;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin-bottom: 15px;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
 /* Responsive для мобильных */
 @media (max-width: 600px) {
     .posts { grid-template-columns: 1fr; }
     header h1 { font-size: 2em; }
-    .post-preview { margin-bottom: 15px; }
-}
-.post-full {
-    background: #2e3f41;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-}
-
-.post-full p {
-    margin-bottom: 15px;
-}
-
-.back-link {
-    display: block;
-    text-align: center;
-    color: #e76f51;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.back-link:hover {
-    text-decoration: underline;
+    .modal-content { width: 90%; }
 }
