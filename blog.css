@@ -1,0 +1,90 @@
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1c2526; /* Тёмный фон с серым оттенком */
+    color: #e0e0e0;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background: #2a3d3e; /* Глубокий тёмно-зелёный заголовок */
+    padding: 50px 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    color: #f4a261; /* Тёплый оранжевый акцент */
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+    color: #a3bffa;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.post-preview {
+    background: #2e3f41; /* Тёмный блок для постов */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.post-preview:hover {
+    transform: translateY(-5px);
+}
+
+.post-preview h3 {
+    margin: 0 0 15px;
+    font-size: 1.5em;
+    color: #f4a261;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #a3bffa;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    color: #e76f51; /* Яркий коралловый для ссылок */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #a3bffa;
+    background: #2a3d3e;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+/* Responsive для мобильных */
+@media (max-width: 600px) {
+    .posts { grid-template-columns: 1fr; }
+    header h1 { font-size: 2em; }
+    .post-preview { margin-bottom: 15px; }
+}
